@@ -1,0 +1,19 @@
+version: '3.8' # Specify the Docker Compose file version
+name: demo-nestjs
+services:
+  mysql:
+    image: mysql:latest # Use the latest MySQL image
+    container_name: mysql-dev # Name the container
+    restart: always # Restart the container if it exits
+    environment:
+      MYSQL_ROOT_PASSWORD: _password # Set the root password
+      MYSQL_DATABASE: mysqldb # Create a database
+      MYSQL_USER: username # Create a user
+      MYSQL_PASSWORD: _password # Set user password
+    ports:
+      - '3306:3306' # Map port 3306 on the host to port 3306 in the container
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist database data
+
+volumes:
+  mysql-data: # Create a volume to store database data
