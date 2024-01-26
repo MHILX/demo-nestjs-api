@@ -22,9 +22,7 @@ NestJS is an open-source Node.js framework for building efficient, scalable serv
 
 - Routing system similar to Express with controller class routing handling HTTP requests.
 
-- Interceptors for cross-cutting concerns like authentication, logging etc. Logic is cleanly separated.
-
-- Built-in utilities like [guards](https://docs.nestjs.com/guards), [pipes](https://docs.nestjs.com/pipes), [interceptors](https://docs.nestjs.com/interceptors) and exception filters for security and error handling.
+- Built-in utilities like [guards](https://docs.nestjs.com/guards), [pipes](https://docs.nestjs.com/pipes), [interceptors](https://docs.nestjs.com/interceptors) and exception filters for cross-cutting concerns like security, loggin, error handling, etc.
 
 - Proper support for [REST APIs](https://restfulapi.net/)  with abstract classes like Services, [Controllers](https://docs.nestjs.com/interceptors), etc.
 
