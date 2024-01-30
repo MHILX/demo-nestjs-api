@@ -4,27 +4,19 @@ NestJS is an open-source Node.js framework for building efficient, scalable serv
 
 ### Some of the main features:
 
-- Modular application structure through [modules](https://docs.nestjs.com/modules). Each part of the app can be split into self-contained modules. This makes the code more organized and maintainable.
+- Modular Architecture: NestJS is based on the modular architecture pattern, allowing developers to create reusable code and organize their applications into logical [modules](https://docs.nestjs.com/modules).
 
-- Dependency injection built into the framework core. Nest manages dependencies automatically through the `@Injectable()` decorator.
+- Dependency Injection: NestJS uses dependency injection to manage the creation and lifecycle of objects. This makes it easier to write scalable and maintainable applications by allowing developers to easily create and manage complex object graphs.
+
+- Middleware: NestJS supports middleware, which can be used to add functionality to an application's request/response cycle. Middleware can be used for tasks such as logging, error handling, and authentication.
+
+- API Development: NestJS provides proper support for [REST APIs](https://restfulapi.net/), [GraphQL](https://docs.nestjs.com/graphql/quick-start), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) and [gRPC](https://docs.nestjs.com/microservices/grpc#overview).
+
+- Database tools like [TypeORM](https://typeorm.io/) for entity management and CRUD operations are avaialble for easy integration.
+
+- Built-in utilities like [guards](https://docs.nestjs.com/guards), [pipes](https://docs.nestjs.com/pipes), [interceptors](https://docs.nestjs.com/interceptors) and exception filters for cross-cutting concerns like security, loggin, error handling, etc. are available in the framework.
 
 - [OpenAPI (Swagger)](https://www.openapis.org/): This makes it easy to document the API and test it.
-
-- [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API): This makes it easy to implement real-time communication.
-
-- [GraphQL](https://graphql.org/): This makes it easy to implement GraphQL APIs.
-
-- Built-in support for RxJS observables out of the box. Async code is simplified and promises are avoided.
-
-- Database tools like [TypeORM](https://typeorm.io/) for entity management and CRUD operations. Connectors are available for MongoDB, PostgreSQL etc.
-
-- Validation and sanitation features using classes-transformer and class-validator. Input is validated easily.
-
-- Routing system similar to Express with controller class routing handling HTTP requests.
-
-- Built-in utilities like [guards](https://docs.nestjs.com/guards), [pipes](https://docs.nestjs.com/pipes), [interceptors](https://docs.nestjs.com/interceptors) and exception filters for cross-cutting concerns like security, loggin, error handling, etc.
-
-- Proper support for [REST APIs](https://restfulapi.net/)  with abstract classes like Services, [Controllers](https://docs.nestjs.com/interceptors), etc.
 
 ## NestJS vs Express
 
@@ -39,6 +31,18 @@ NestJS is an open-source Node.js framework for building efficient, scalable serv
 | NestJS integrates ORMs seamlessly via modules.| Express requires manual queries usually.|
 
 So NestJS abstracts away boilerplate and provides structure, while Express provides raw routing capabilities. NestJS can be viewed as a higher-level framework built upon the lower-level Express.
+
+### Use Cases:
+- Large or complex applications: Nest's structural features like modules, dependency injection and OOP patterns help organize large codebases and divide code into logical components. This makes the code easier to understand and maintain as an app grows.
+
+- API-focused projects: Nest is optimized for building REST/GraphQL APIs. Features like built-in routing, controllers, interceptors and guards help create robust, scalable APIs more easily.
+
+- Migrating from other frameworks: Nest's familiar OOP concepts adapt well to developers coming from Angular, .NET or Java backgrounds. Typescript also provides compile-time checking.
+
+- Microservices architectures: Nest's modular approach to code organization lends itself well to dividing an app into independent microservices. DI further decouples services.
+
+### Conclusion:
+I would recommend using NestJS for new projects, especially if we are building a REST API or GraphQL API. It provides a lot of features out of the box and is easy to use. It also has a large community and good documentation.
 
 ---
 ## Helpful Links:
