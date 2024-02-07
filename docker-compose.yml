@@ -1,9 +1,25 @@
 version: '3.8' # Specify the Docker Compose file version
 name: demo-nestjs
 services:
+  infrastructure-bundle:
+    image: newrelic/infrastructure-bundle:latest
+    container_name: infrastructure-bundle
+    network_mode: host
+    cap_add:
+      - SYS_PTRACE
+    privileged: true
+    pid: host
+    volumes:
+      - "/:/host:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "newrelic-infra:/etc/newrelic-infra"
+    environment:
+      - NRIA_LICENSE_KEY=${NRIA_LICENSE_KEY}
+
   mysql:
     image: mysql:latest # Use the latest MySQL image
     container_name: mysql-dev # Name the container
+    network_mode: host
     restart: always # Restart the container if it exits
     environment:
       MYSQL_ROOT_PASSWORD: _password # Set the root password
@@ -13,7 +29,9 @@ services:
     ports:
       - '3306:3306' # Map port 3306 on the host to port 3306 in the container
     volumes:
-      - mysql-data:/var/lib/mysql # Persist database data
+      - mysql-data:/var/lib/mysql # Persist database data    
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Initialize the database with init.sql
 
 volumes:
   mysql-data: # Create a volume to store database data
+  newrelic-infra: # Create a volume to store New Relic Infrastructure data
